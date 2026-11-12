@@ -1,0 +1,168 @@
+@import 'tailwindcss';
+
+/*
+ * Misión 1962 — tema editorial académico.
+ * Toda la paleta, las familias tipográficas y la escala viven en tokens;
+ * ninguna regla de este archivo usa colores o fuentes literales.
+ */
+
+@theme static {
+  /* Superficies */
+  --color-paper: #f5f1e8;
+  --color-paper-raised: #fbf8f1;
+  --color-paper-sunken: #ece6d9;
+
+  /* Tinta */
+  --color-ink: #1c1b18;
+  --color-ink-soft: #47443d;
+  --color-ink-faint: #777268;
+
+  /* Líneas */
+  --color-rule: #d7cfbf;
+  --color-rule-strong: #b3a996;
+
+  /* Señales */
+  --color-signal: #a33a24;
+  --color-signal-strong: #7e2a18;
+  --color-instrument: #1f4e63;
+  --color-success: #2f6b4f;
+  --color-danger: #a33a24;
+
+  /* Tipografía */
+  --font-display:
+    'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia,
+    'Times New Roman', serif;
+  --font-body:
+    ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif;
+  --font-mono:
+    ui-monospace, 'Cascadia Mono', 'SF Mono', Menlo, Consolas,
+    'Liberation Mono', monospace;
+
+  /* Radios */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+
+  /* Movimiento */
+  --ease-out: cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+
+:root {
+  color-scheme: light;
+
+  /* Escala tipográfica */
+  --step--1: 0.8125rem;
+  --step-0: 1.0625rem;
+  --step-1: 1.25rem;
+  --step-2: 1.5rem;
+  --step-3: clamp(1.875rem, 1.5rem + 1.6vw, 2.75rem);
+  --step-4: clamp(2.5rem, 1.8rem + 3.2vw, 4.25rem);
+
+  --leading-tight: 1.08;
+  --leading-snug: 1.3;
+  --leading-body: 1.62;
+
+  /* Escala de espacio */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+  --space-10: 8rem;
+
+  /* Estructura editorial */
+  --container: 74rem;
+  --measure: 64ch;
+  --gutter: clamp(1.25rem, 4vw, 4rem);
+  --hairline: 1px solid var(--color-rule);
+  --hairline-strong: 1px solid var(--color-rule-strong);
+  --rule-thick: 2px solid var(--color-ink);
+
+  /* Elevación y movimiento */
+  --ink-rgb: 28 27 24;
+  --shadow-panel: 0 1px 0 0 rgb(var(--ink-rgb) / 0.06);
+  --shadow-lift: 0 18px 40px -28px rgb(var(--ink-rgb) / 0.35);
+  --duration: 140ms;
+}
+
+html {
+  overflow-x: clip;
+  background-color: var(--color-paper);
+}
+
+body {
+  margin: 0;
+  overflow-x: clip;
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: var(--step-0);
+  line-height: var(--leading-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: var(--leading-tight);
+  letter-spacing: -0.012em;
+  color: var(--color-ink);
+  overflow-wrap: break-word;
+}
+
+p {
+  margin: 0;
+}
+
+::selection {
+  background-color: var(--color-signal);
+  color: var(--color-paper-raised);
+}
+
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: 2px solid var(--color-signal);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Vista provisional del starter; se reemplaza en la fase de presentación. */
+.content {
+  display: flex;
+  min-height: 100vh;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding: var(--space-8) var(--gutter);
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--space-4);
+  text-align: center;
+}
+
+.content h1 {
+  font-size: var(--step-4);
+}
+
+.content p {
+  max-width: var(--measure);
+  margin-inline: auto;
+  color: var(--color-ink-soft);
+  font-size: var(--step-1);
+}

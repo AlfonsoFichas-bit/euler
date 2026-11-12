@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "skills": {
+    "rsbuild-best-practices": {
+      "source": "rstackjs/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/rsbuild-best-practices/SKILL.md",
+      "computedHash": "dce08fd21a5a49c8e2ba9e3d9b621aac83ce48d317cd20a00ed133b8742e7a90",
+      "installMode": "copy"
+    },
+    "rstest-best-practices": {
+      "source": "rstackjs/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/rstest-best-practices/SKILL.md",
+      "computedHash": "20510a0f393b5d31f970158f211767a59a0c8fd0069f840f5b1ddfeab2796eac",
+      "installMode": "copy"
+    }
+  }
+}
