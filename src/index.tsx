@@ -1,3 +1,4 @@
+import 'katex/dist/katex.min.css';
 import { render } from 'preact';
 import App from './App';
 

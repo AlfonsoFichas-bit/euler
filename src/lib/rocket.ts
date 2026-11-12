@@ -240,7 +240,7 @@ export function simulate(p: RocketParams): Simulation {
 // ---------- Step comparison ----------
 
 /** Steps used for convergence comparison. */
-const COMPARISON_STEPS = [2, 1, 0.5, 0.25] as const;
+export const COMPARISON_STEPS = [2, 1, 0.5, 0.25] as const;
 
 /**
  * Compare Euler results across multiple step sizes and include an exact row.
